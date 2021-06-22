@@ -5,13 +5,13 @@ namespace CatWorx.BadgeMaker
 {
     class Program
     {
-        static List<string> GetEmployees()
+        static List<Employee> GetEmployees()
         {
-            List<string> employees = new List<string>();
+            List<Employee> employees = new List<Employee>();
             // Collect user values until the value is an empty string
             while (true)
             {
-                Console.WriteLine("Please enter a name: ");
+                Console.WriteLine("Please enter a name: (leave empty to exit): ");
                 string input = Console.ReadLine();
                 // Break if the user hits ENTER without typing a name
                 if (input == "")
@@ -20,22 +20,22 @@ namespace CatWorx.BadgeMaker
                 }
 
                 // Create a new Employee instance
-                Employee currentEmployee = new Employee();
-                employees.Add(input);
+                Employee currentEmployee = new Employee(input, "Smith");
+                employees.Add(currentEmployee);
             }
 
             return employees;
         }
-        static void PrintEmployees(List<string> employees)
+        static void PrintEmployees(List<Employee> employees)
         {
             for (int i = 0; i < employees.Count; i++)
             {
-                Console.WriteLine(employees[i]);
+                Console.WriteLine(employees[i].GetName());
             }
         }
         static void Main(string[] args)
         {
-            List<string> employees = GetEmployees();
+            List<Employee> employees = GetEmployees();
             PrintEmployees(employees);
         }
     }
