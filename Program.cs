@@ -34,14 +34,11 @@ namespace CatWorx.BadgeMaker
 
             return employees;
         }
-        static void PrintEmployees(List<Employee> employees)
-        {
-            Util.PrintEmployees(employees);
-        }
         static void Main(string[] args)
         {
             List<Employee> employees = GetEmployees();
-            PrintEmployees(employees);
+            Util.PrintEmployees(employees);
+            Util.MakeCSV(employees);
         }
     }
 }
