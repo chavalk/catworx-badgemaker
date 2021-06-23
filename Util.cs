@@ -129,13 +129,8 @@ namespace CatWorx.BadgeMaker
 
                     string template = "data/{0}_badge.png";
                     badge.Save(string.Format(template, employees[i].GetId()));
-                    //  background.Save("data/employeeBadge.png");
                 }
             }
-
-            // Create image
-            // Image newImage = Image.FromFile("badge.png");
-            // newImage.Save("data/employeeBadge.png");
         }
     }
 }
